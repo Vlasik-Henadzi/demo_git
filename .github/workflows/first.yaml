@@ -16,7 +16,7 @@ jobs:
         run: sudo apt update && sudo apt install -y netcat
       - run: echo "netcat has been installed"
       - run: |
-          nc -z -v -w2 ${{matrix.check-sites}} 443>${{matrix.check-sites}}.log 2>&1
+          nc -z -v -w2 ${{matrix.check-sites}} 443 > ${{matrix.check-sites}}.log 2>&1
           ls -la
       - name: Upload report
         uses: actions/upload-artifact@v2
